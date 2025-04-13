@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Simple Calculator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;900&display=swap');
+
+        p {
+            text-align: center;
+            padding: 20px;
+            border-radius: 100px;
+            
+            color: white;
+            font-size: 40px;
+            font-family: 'Roboto', sans-serif;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <div class="mb-3">
+            <label for="num1" class="form-label">Weight</label>
+            <input type="number" class="form-control" id="num1" placeholder="Enter Your Weight">
+        </div>
+        <div class="mb-3">
+            <label for="num2" class="form-label">Height Feet</label>
+            <input type="number" class="form-control" placeholder="Enter Your Feet" id="num2">
+        </div>
+
+        <div class="mb-3">
+            <label for="num3" class="form-label">Inches</label>
+            <input type="number" class="form-control" placeholder="Enter Your Inches" id="num3">
+        </div>
+
+        <div class="d-grid gap-2 col-6 mx-auto mb-3">
+
+            <button type="button" onclick="bmi()" class="btn btn-success">Calculate BMI</button>
+
+        </div>
+        <div class="mb-3">
+            <input class="form-control" type="number" placeholder="Here Is Your Answer" id="ans" readonly>
+        </div>
+
+
+        <p id="res">
+
+
+
+        </p>
+    </div>
+
+    <script>
+
+
+        function bmi() {
+
+
+            var weight = parseInt(document.getElementById("num1").value);
+            var feet = parseInt(document.getElementById("num2").value);//6
+            var inches = parseInt(document.getElementById("num3").value);//1
+
+
+
+            var totalinches = (feet * 12) + inches;//6*12=72 +1= 73
+
+            var totalcentimeters = totalinches * 2.54;
+
+
+            var totalmeters = totalcentimeters / 100;
+
+
+
+            var bmi = weight / (totalmeters * totalmeters)
+
+
+
+
+
+            res = "enter your all fields";
+
+
+
+
+            if (bmi < 18) {
+
+                document.getElementById("res").style.backgroundColor = "red";
+                res = "you are underweight and you are weak &#x1F613; doodh piya karo warna misbah ki tarah hojaiyegngy ";
+            } else if (bmi > 25) {
+                document.getElementById("res").style.backgroundColor = "yellow";
+                res = "you are overweight and you are fat khana chordo advice khuzaima ";
+            } else {
+                document.getElementById("res").style.backgroundColor = "green";
+                res = "you are healthy MashaAllah";
+            }
+
+            document.getElementById("ans").value = bmi.toFixed(2);
+            document.getElementById("res").innerHTML = res;
+
+
+        }
+
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
