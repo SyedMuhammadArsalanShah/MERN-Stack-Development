@@ -3,16 +3,18 @@ import './App.css';
 import Header from './components/Header';
 import Message from './components/Message';
 import UserCard from './components/UserCard';
+import UserList from './components/UserList';
 function App() {
   return (
     <div className="App">
 
-         <Header/>
-         <Message/>
-         <UserCard name="Hiba Naveeed " message="Bhai mera bhi subject hai uska bhi work karen "/>
-         {/* <UserCard name="Saaaria " message="Bhai mera bhi subject hai uska bhi work karen "/> */}
+      <Header />
 
-
+      <Message />
+      <UserCard name="Saaria" message="Class focus Karen"/>
+      <UserCard name="Hiba" message="Off pr hain"/>
+      <UserList/>
+      
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
