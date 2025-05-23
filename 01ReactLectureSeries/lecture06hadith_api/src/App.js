@@ -1,8 +1,4 @@
 
-
-
-
-import logo from './logo.svg';
 import './App.css';
 import SurahList from './components/SurahList';
 import AudioPlayer from './components/AudioPlayer';
